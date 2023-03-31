@@ -1,5 +1,5 @@
 $border-color: rgb(193, 198, 199);
-$hover-btn-color: rgb(92, 91, 91);
+$hover-btn-color: rgb(116, 115, 115);
 * {
   box-sizing: border-box;
   margin: 0;
@@ -74,23 +74,43 @@ body {
   }
 }
 
+//content
+
+.main-content {
+  overflow-y: scroll;
+  width: 100%;
+  height: 740px;
+  .content {
+    background-color: black;
+  }
+}
+
 //bottom nav
 
 .bottom_nav {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 80px;
   padding: 10px;
+  background-color: #fff;
   border-top: 2px solid $border-color;
+  z-index: 100;
 
   button {
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
     background: none;
     cursor: pointer;
 
     :hover {
+      color: $hover-btn-color;
+    }
+
+    i {
+      font-size: 2.5rem;
     }
   }
 }

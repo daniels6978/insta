@@ -58,117 +58,18 @@
           </div>
           <div class="post-buttons">
             <div class="left-buttons">
-              <button><i class="fas fa-heart"></i></button>
-              <button><i class="fas fa-comment"></i></button>
-              <button><i class="fa fa-paper-plane"></i></button>
+              <button class="like-btn"><i class="far fa-heart"></i></button>
+              <button class="comments-btn">
+                <i class="far fa-comment"></i>
+              </button>
+              <button class="share-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
             </div>
             <div class="right-button">
-              <button><i class="fa fa-bookmark"></i></button>
-            </div>
-          </div>
-          <div class="like-counter">
-            <p>120 likes</p>
-          </div>
-          <div class="post-description">
-            <span class="username">Daniel</span>
-            <span class="description">Lorem ipsum dolor sit amet.</span>
-          </div>
-          <div class="post-comments">
-            <p>View 6 coments</p>
-          </div>
-        </div>
-        <div class="content">
-          <div class="post-top">
-            <div class="post-avatar">
-              <img src="./img/avatar.jpg" alt="girl" />
-              <span>Daniel</span>
-            </div>
-            <button class="post-option">
-              <i class="fas fa-light fa-circle"></i>
-            </button>
-          </div>
-
-          <div class="post-photo">
-            <img src="./img/photo.jpg" alt="" />
-          </div>
-          <div class="post-buttons">
-            <div class="left-buttons">
-              <button><i class="fas fa-heart"></i></button>
-              <button><i class="fas fa-comment"></i></button>
-              <button><i class="fa fa-paper-plane"></i></button>
-            </div>
-            <div class="right-button">
-              <button><i class="fa fa-bookmark"></i></button>
-            </div>
-          </div>
-          <div class="like-counter">
-            <p>120 likes</p>
-          </div>
-          <div class="post-description">
-            <span class="username">Daniel</span>
-            <span class="description">Lorem ipsum dolor sit amet.</span>
-          </div>
-          <div class="post-comments">
-            <p>View 6 coments</p>
-          </div>
-        </div>
-        <div class="content">
-          <div class="post-top">
-            <div class="post-avatar">
-              <img src="./img/avatar.jpg" alt="girl" />
-              <span>Daniel</span>
-            </div>
-            <button class="post-option">
-              <i class="fas fa-light fa-circle"></i>
-            </button>
-          </div>
-
-          <div class="post-photo">
-            <img src="./img/photo.jpg" alt="" />
-          </div>
-          <div class="post-buttons">
-            <div class="left-buttons">
-              <button><i class="fas fa-heart"></i></button>
-              <button><i class="fas fa-comment"></i></button>
-              <button><i class="fa fa-paper-plane"></i></button>
-            </div>
-            <div class="right-button">
-              <button><i class="fa fa-bookmark"></i></button>
-            </div>
-          </div>
-          <div class="like-counter">
-            <p>120 likes</p>
-          </div>
-          <div class="post-description">
-            <span class="username">Daniel</span>
-            <span class="description">Lorem ipsum dolor sit amet.</span>
-          </div>
-          <div class="post-comments">
-            <p>View 6 coments</p>
-          </div>
-        </div>
-        <div class="content">
-          <div class="post-top">
-            <div class="post-avatar">
-              <img src="./img/avatar.jpg" alt="girl" />
-              <span>Daniel</span>
-            </div>
-            <button class="post-option">
-              <i class="fas fa-light fa-circle"></i>
-            </button>
-          </div>
-
-          <div class="post-photo">
-            <img src="./img/photo.jpg" alt="" />
-          </div>
-          <div class="post-buttons">
-            <div class="left-buttons">
-              <button><i class="fas fa-heart"></i></button>
-              <button><i class="fas fa-comment"></i></button>
-              <button><i class="fa fa-paper-plane"></i></button>
-            </div>
-            <div class="right-button">
-              <button><i class="fa fa-bookmark"></i></button>
+              <button class="save-post-btn">
+                <i class="far fa-bookmark"></i>
+              </button>
             </div>
           </div>
           <div class="like-counter">
@@ -195,6 +96,49 @@
       </nav>
     </div>
 
+    <template class="post_temp">
+      <div class="content">
+        <div class="post-top">
+          <div class="post-avatar">
+            <img src="./img/avatar.jpg" alt="girl" />
+            <span>Daniel</span>
+          </div>
+          <button class="post-option">
+            <i class="fas fa-light fa-circle"></i>
+          </button>
+        </div>
+
+        <div class="post-photo">
+          <img src="./img/photo.jpg" alt="" />
+        </div>
+        <div class="post-buttons">
+          <div class="left-buttons">
+            <button class="like-btn"><i class="far fa-heart"></i></button>
+            <button class="comments-btn">
+              <i class="far fa-comment"></i>
+            </button>
+            <button class="share-btn">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+          <div class="right-button">
+            <button class="save-post-btn">
+              <i class="far fa-bookmark"></i>
+            </button>
+          </div>
+        </div>
+        <div class="like-counter">
+          <p>120 likes</p>
+        </div>
+        <div class="post-description">
+          <span class="username">Daniel</span>
+          <span class="description">Lorem ipsum dolor sit amet.</span>
+        </div>
+        <div class="post-comments">
+          <p>View 6 coments</p>
+        </div>
+      </div>
+    </template>
     <script src="js/main.js"></script>
   </body>
 </html>

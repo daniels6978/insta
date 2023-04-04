@@ -189,6 +189,10 @@ body {
   cursor: pointer;
 }
 
+.active-like-btn {
+  color: red;
+}
+
 .bottom_nav {
   display: -webkit-box;
   display: -ms-flexbox;

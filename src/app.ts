@@ -3,10 +3,11 @@
 const like_btn: HTMLCollection = document.getElementsByClassName("like-btn");
 const comments_btn: HTMLButtonElement = document.querySelector(".comments-btn");
 const share_btn: HTMLButtonElement = document.querySelector(".share-btn");
-const save_post_btn: HTMLButtonElement =
-  document.querySelector(".save-post-btn");
+const save_post_btn: HTMLCollection =
+  document.getElementsByClassName("save-post-btn");
 
 const post_temp: any = document.querySelector(".post_temp");
+const loading_temp: any = document.querySelector(".loading_temp");
 const main_content: HTMLElement = document.querySelector(".main-content");
 
 let offset: number = 500;
@@ -22,20 +23,26 @@ const setActiveLike = (e) => {
 
 const setSavePostActive = (e) => {
   e.target.classList.toggle("fas");
+  console.log(e.target);
 };
 
-const addNewPost = () => {
-  // axios.get(API_LINK).then((res: unknown) => {
-  //   console.log(res);
-  // });
+const addNewPost = async () => {
   fetch(API_LINK)
     .then((res) => res.json())
     .then((data) => {
-      const newPost: HTMLElement = post_temp.content.cloneNode(true);
-      const img_element: HTMLImageElement = newPost.querySelector(".photo");
-      img_element.setAttribute("src", data.message);
-      main_content.append(newPost);
-    });
+      const loading_element: HTMLElement = loading_temp.content.cloneNode(true);
+      const lds_dual_ring: any =
+        loading_element.querySelector(".lds_dual_ring");
+      main_content.append(loading_element);
+      setTimeout(() => {
+        lds_dual_ring.remove();
+        const newPost: HTMLElement = post_temp.content.cloneNode(true);
+        const img_element: HTMLImageElement = newPost.querySelector(".photo");
+        main_content.append(newPost);
+        img_element.setAttribute("src", data.message);
+      }, 2000);
+    })
+    .catch((err) => console.log(err));
 };
 
 const handleScroll = () => {
@@ -52,7 +59,12 @@ main_content.addEventListener("click", () => {
     like.addEventListener("click", setActiveLike);
   });
 });
-save_post_btn.addEventListener("click", setSavePostActive);
+main_content.addEventListener("click", () => {
+  Array.from(save_post_btn).forEach((save_post) => {
+    save_post.addEventListener("click", setSavePostActive);
+  });
+});
+// save_post_btn.addEventListener("click", setSavePostActive);
 share_btn.addEventListener("click", addNewPost);
 
 main_content.addEventListener("scroll", handleScroll);
